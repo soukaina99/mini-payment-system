@@ -1,0 +1,24 @@
+
+# api requirements
+django==2.1
+djangorestframework==3.9.3
+dj-database-url
+Pillow
+psycopg2
+pytz
+uWSGI
+psycopg2-binary>=2.8
+django-extensions
+django-rest-swagger
+
+
+# tests requirenments
+coverage==4.2
+pytest==4.6.1
+pytest-django==3.8.0
+pytest-cov==2.5.1
+django_dynamic_fixture==1.9.5
+Faker==0.7.3
+pdbpp==0.9.1
+fpdf==1.7.2
+factory_boy

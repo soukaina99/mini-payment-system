@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+        - POSTGRES_DB=postgres
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    command: >
+      sh -c "make static_files && make run_wsgi"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file: docker-compose.env
+
+  run_once:
+    build: .
+    command: >
+      sh -c "make migrate"
+    env_file:
+      - docker-compose.env
+    depends_on:
+      - web
