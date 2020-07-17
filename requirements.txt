@@ -1,6 +1,6 @@
 
 # api requirements
-django==2.1
+django==2.2.14
 djangorestframework==3.9.3
 dj-database-url
 Pillow
